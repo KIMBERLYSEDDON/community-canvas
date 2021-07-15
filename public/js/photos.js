@@ -1,10 +1,10 @@
 // name Cloudinary api key variables
 
-const cloudApiKey = process.env.CLOUD_KEY;
+// const cloudApiKey = process.env.CLOUD_KEY;
 
-const cloudSecret = process.env.CLOUD_SECRET;
+// const cloudSecret = process.env.CLOUD_SECRET;
 
-const cloudURL = process.env.CLOUDINARY_URL;
+// const cloudURL = process.env.CLOUDINARY_URL;
 
 
 
@@ -78,25 +78,25 @@ const cloudURL = process.env.CLOUDINARY_URL;
 
 // write fetch function
 
-function callCloud(){
-    fetch(CLOUDINARY_URL)
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function(data) {
-      console.log(data)
-    })
-    .catch(function (error) {
-        console.warn(error);
+// function callCloud(){
+//     fetch(cloudURL)
+//     .then(function (response) {
+//         return response.json();
+//     })
+//     .then(function(data) {
+//       console.log(data)
+//     })
+//     .catch(function (error) {
+//         console.warn(error);
 
-    })
+//     })
   
-};
+// };
 
 // call fetch function
 
 // callCloud();
 
-cloudinary.imageTag('https://upload.wikimedia.org/wikipedia/commons/1/13/Benedict_Cumberbatch_2011.png', {type: "fetch"}).toHtml();
+
 
 
