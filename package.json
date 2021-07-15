@@ -21,6 +21,7 @@
   "homepage": "https://github.com/Keith-L-Watford/community-canvas#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "cloudinary": "^1.26.2",
     "connect-session-sequelize": "^7.0.4",
     "dotenv": "^10.0.0",
     "eslint": "^7.30.0",
