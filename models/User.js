@@ -12,10 +12,32 @@ class User extends Model {
 }
 
 User.init({
-    id: {},
-    username: {},
-    email: {},
-    password: {},
+    id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        primaryKey:true,
+        autoIncrement: true,
+    },
+    username: {
+        type: DataTypes.STRING,
+        unique: true,
+        allowNull: false,
+    },
+    email: {
+        type: DataTypes.STRING,
+        unique: unique,
+        allowNull: false,
+        validate: {
+            isEmail: true,
+        },
+    },
+    password: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+            len: [8],
+        },
+    },
 }, {
     hooks: {
         beforeCreate: async (newUserData) => {
