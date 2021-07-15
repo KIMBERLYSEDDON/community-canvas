@@ -1,10 +1,9 @@
 const sequelize = require('../config/connection');
 const { User, Post, Comment } = require('../models');
 
-// unsure how the photo data will be saved
-// the json files still need to be created
-const userData = require('./');
-const postData = require('./');
+// unsure how the photo data will be saved, 
+const userData = require('./userData.json');
+// const postData = require('./');
 
 // Unsure if we want to seed dummy comments
 // const commentData = require('./');
