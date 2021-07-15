@@ -16,19 +16,67 @@
     />
     <link rel="stylesheet" href="/css/style.css" />
   </head>
-  <header>
+  <body class="hero is-primary is-medium has-background">
+      <!-- Hero head: will stick at the top -->
+      <div class="hero-head">
+        <nav class="navbar">
+          <div class="container">
+            <div class="navbar-brand mt-2">
+              <p class="title is-1">Community Canvas</p>
+              <p class="subtitle is-3">a collaborative street art library</p>
+              <span class="navbar-burger" data-target="navbarMenuHeroA">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </div>
+            <div id="navbarMenuHeroA" class="navbar-menu">
+              <div class="navbar-end">
+                <a class="navbar-item is-active">
+                  Home
+                </a>
+                <a class="navbar-item">
+                  Community
+                </a>
+                <a class="navbar-item">
+                  My Block
+                </a>
+                <span class="navbar-item">
+                  <a class="button is-primary is-inverted">
+                    <span>Log In</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <!-- Hero content: will be in the middle -->
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          {{{body}}}
+        </div>
+      </div>
+
+      {{!-- <header>
     <section class="section">
       <div class="container">
         <h1 class="title">
           Community Canvas
+          <h2 class="subheader">
+            a collaborative street art library
+          </h2>
         </h1>
-        <h2 class="subheader">
-          a collaborative street art library
-        </h2>
       </div>
     </section>
   </header>
   <body>
-    {{{body}}}
+    {{{body}}} --}}
+
+      <div class="hero-foot">
+        <div class="container">
+        </div>
+      </div>
   </body>
 </html>

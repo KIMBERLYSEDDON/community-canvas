@@ -1,9 +1,19 @@
 .title {
     font-family: 'Zen Tokyo Zoo', cursive !important;
-    font-size: 140px;
+    /* font-size: 110px; */
 }
-.subheader {
+.subtitle {
     font-family: 'Indie Flower', cursive;
-    font-size: 40px;
-    margin-left: 300px;
+    /* font-size: 30px;
+    margin-left: 100px; */
+}
+.navbar-brand {
+    display: block;
+}
+.has-background {
+    background: url('../images/wall3.jpg')center center; 
+    background-size:cover;
+}
+.card {
+    max-width: 128px;
 }
