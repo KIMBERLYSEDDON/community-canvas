@@ -5,7 +5,9 @@ const { User, Post, Comment } = require('../models');
 // the json files still need to be created
 const userData = require('./');
 const postData = require('./');
-const commentData = require('./');
+
+// Unsure if we want to seed dummy comments
+// const commentData = require('./');
 
 const seedDatabase = async () => {
     await sequelize.sync({ force: true });
@@ -22,7 +24,7 @@ const seedDatabase = async () => {
         });
     }
 
-    // Unsure if we want to seed dummy comments
+    // seeded comment code will go here.
 
     process.exit(0);
 };
