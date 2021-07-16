@@ -17,15 +17,24 @@
 .card {
     max-width: fit-content;
     max-height: fit-content;
+    background-color: rgba(221, 217, 217, 0);
+    border: none;
 }
-.bg {
-    background-color: blue;
-}
+
 .img {
     opacity: 100%;
 }
-.feature:hover {
+.card-description {
+    opacity: 0;
+    display: none;
+}
+.card:hover {
     transition: .6s;
     transform: scale(2);
     z-index: 1;
+    background-color: rgba(163, 150, 150, 0.658);
+}
+.card:hover .card-description {
+    opacity: 1;
+    display: block;
 }
