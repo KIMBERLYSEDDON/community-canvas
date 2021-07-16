@@ -36,23 +36,35 @@
               <span></span>
             </span>
           </div>
-          <div id="navbarMenuHeroA" class="navbar-menu">
+          <div id="navbarMenuHeroA" class="navbar-menu is-active">
             <div class="navbar-end">
+
               <a href="/" class="navbar-item">
+              <button class="button is-primary is-inverted">
                 Home
+                  </button>
               </a>
+
               <a href="/community" class="navbar-item">
+              <button class="button is-primary is-inverted">
                 Community
+                 </button>
               </a>
+
               {{#if logged_in}}
+
                 <a href="/my-block" class="navbar-item">
+                <button class="button is-primary is-inverted">
                   My Block
+                  </button>
                 </a>
+
                 <span class="navbar-item">
                   <button class="button is-primary is-inverted" id="logout">
                     <span>Log Out</span>
                   </button>
                 </span>
+
               {{else}}
                 <span class="navbar-item">
                   <a href="/login" class="button is-primary is-inverted">
