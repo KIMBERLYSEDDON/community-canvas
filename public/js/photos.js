@@ -56,7 +56,7 @@
       (error, result) => {
         console.log(error, result)
         if (!error && result /* && result.event === "success"*/) {
-          console.log("Done! Here is the image info: ", result.info);
+          console.log("Done! Here is the image info: ", result.info.secure_url);
           // document.getElementById("uploadedimage").setAttribute("src", result.info.secure_url);
         } else {
           console.log('!!!!!!', error)
