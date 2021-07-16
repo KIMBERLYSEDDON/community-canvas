@@ -15,5 +15,17 @@
     background-size:cover;
 }
 .card {
-    max-width: 128px;
+    max-width: fit-content;
+    max-height: fit-content;
+}
+.bg {
+    background-color: blue;
+}
+.img {
+    opacity: 100%;
+}
+.feature:hover {
+    transition: .6s;
+    transform: scale(2);
+    z-index: 1;
 }
