@@ -74,6 +74,21 @@
 
 
 
+  //   const myWidgetG = cloudinary.galleryWidget({
+  //     "cloudName": "cloudcontrol",
+  //     "mediaAssets": [{
+  //         "publicId": "community_canvas/lvlpdz2g60aacoldd29o",
+  //         "mediaType": "image"
+  //     }, {
+  //         "publicId": "community_canvas/syeouuhnsvarktnwq2br",
+  //         "mediaType": "image"
+  //     }],
+  //     "container": "#my-gallery"
+  // });
+  // myWidgetG.render();
+
+
+
 
 
 // write fetch function
