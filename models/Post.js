@@ -11,16 +11,19 @@ Post.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: { 
-        type: DataTypes.STRING, 
-        allowNull: false,
+    image: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     description: {
-    type: DataTypes.STRING,
+      type: DataTypes.STRING,
     },
     location: {
       type: DataTypes.STRING,
     },
+    // tags: {
+    //   type: DataTypes.STRING,
+    // },
     date_posted: {
       type: DataTypes.DATE,
       allowNull: false,
