@@ -1,17 +1,22 @@
-<div class="card m-3">
+<div class="card m-6">
   <div class="column">
-  <div class="card-image feature">
-    <figure class="image is-128x128">
-      <img src="{{image}}" alt="Placeholder image">
-    </figure>
-  </div>
-    <div class="card-description">
-    <div class="card-content">
-    <div class="content">
-      <p>Posted by: {{User.username}} </p>
-      <p>On: {{format_date date_posted}} </p>
+    <div class="card-image feature">
+      <figure class="image is-fullwidth">
+        <img src="{{image}}" alt="Placeholder image" />
+      </figure>
     </div>
+
+    <div class="card-description">
+      <div class="content">
+        <p>
+          Posted by:
+          {{User.username}}
+          <br />
+          On:
+          {{format_date date_posted}}
+        </p>
+      </div>
+    </div>
+
   </div>
-  </div>
-</div>
 </div>

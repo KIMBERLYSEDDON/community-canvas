@@ -24,7 +24,10 @@
 .img {
     opacity: 100%;
 }
+
+/* move the desc */
 .card-description {
+    position: relative;
     opacity: 0;
     display: none;
 }
@@ -40,5 +43,5 @@
 } */
 .card:hover .card-description {
     opacity: 1;
-    display: block;
+    display: inline;
 }
