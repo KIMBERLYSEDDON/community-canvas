@@ -15,8 +15,8 @@
     background-size:cover;
 }
 .card {
-    max-width: fit-content;
-    max-height: fit-content;
+    max-width: 150px;
+    max-height: 150px;
     background-color: rgba(221, 217, 217, 0);
     border: none;
 }
@@ -30,10 +30,14 @@
 }
 .card:hover {
     transition: .6s;
-    transform: scale(2);
+    transform: scale(2.5);
     z-index: 1;
     background-color: rgba(163, 150, 150, 0.658);
 }
+/* .card:hover img {
+    transition: .6s;
+    transform: scale(2);
+} */
 .card:hover .card-description {
     opacity: 1;
     display: block;
