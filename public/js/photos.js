@@ -1,4 +1,3 @@
-
 // name Cloudinary api key variables
 
 // const cloudApiKey = process.env.CLOUD_KEY;
@@ -21,59 +20,61 @@
 //   document.getElementById("upload_widget").addEventListener("click", function(){
 //       myWidget.open();
 //     }, false);
+const newPostHandler = async (event) => {
+  //second attempt from Cloudinary docs
+  const cloudName = "cloudcontrol"; // replace with your own cloud name
+  const uploadPreset = "canvas"; // replace with your own upload preset
+  const myWidget = cloudinary.createUploadWidget(
+    {
+      cloudName: cloudName,
+      uploadPreset: uploadPreset,
 
-//second attempt from Cloudinary docs
-let imgUrl;
-const cloudName = "cloudcontrol"; // replace with your own cloud name
-const uploadPreset = "canvas"; // replace with your own upload preset
-const myWidget = cloudinary.createUploadWidget(
-  {
-    cloudName: cloudName,
-    uploadPreset: uploadPreset,
+      cropping: true, //add a cropping step
 
-    cropping: true, //add a cropping step
+      multiple: false, //restrict upload to a single file
+      folder: "community_canvas", //upload files to the specified folder
 
-    multiple: false, //restrict upload to a single file
-    folder: "community_canvas", //upload files to the specified folder
+      context: { alt: "user_uploaded" }, //add the given context data to the uploaded files
 
-    context: { alt: "user_uploaded" }, //add the given context data to the uploaded files
+      maxImageWidth: 1000, //Scales the image down to a width of 2000 pixels before uploading
+    },
+    (error, result) => {
+          if (result.event === "success") {
+            console.log("Done! Here is the image info: ", result.info.secure_url);
+          const description = document.querySelector("#description-input").value.trim();
+          const location = document.querySelector("#location-input").value.trim();
+          const image = result.info.secure_url;
+          // if (!description || !location){
+          //   alert("Please fill out all fields before uploading image")
+          // }
+          if (description && location && image) {
+            const response = fetch("/api/post", {
+              method: "POST",
+              body: JSON.stringify({ description, location, image }),
+              headers: { "Content-Type": "application/json" },
+            });
+            if (response.ok) {
+              document.location.replace("/my-block");
+            } else {
+              alert("Please make sure all fields are filled out before uploading photo.")
+            }
+          }
+          // document.getElementById("uploadedimage").setAttribute("src", result.info.secure_url);
+        };
+      }
+  );
+  document.getElementById("upload_widget").addEventListener(
+    "click",
+    function (e) {
+      e.preventDefault();
+      myWidget.open();
+    },
+    false
+  );
+};
 
-    maxImageWidth: 1000, //Scales the image down to a width of 2000 pixels before uploading
+newPostHandler();
 
-  },
-  (error, result) => {
-    console.log(error, result);
-    if (!error && (result && result.event === "success")) {
-      console.log("Done! Here is the image info: ", result.info.secure_url);
-      const image = result.info.secure_url
-      fetch('/api/post', {
-        method: 'POST',
-        body: JSON.stringify( { image }),
-        headers: { 'Content-Type': 'application/json' },
-      }).then ((res) =>{
-        res.json();
-      } ).then ((data)=> {
-        console.log(data)
-      })
-      return imgUrl;
-      // document.getElementById("uploadedimage").setAttribute("src", result.info.secure_url);
-    } else {
-      console.log("!!!!!!", error);
-    }
-  }
-);
-
-
-document.getElementById("upload_widget").addEventListener(
-  "click",
-  function (e) {
-    e.preventDefault()
-    myWidget.open();
-    return imgUrl;
-  },
-  false
-);
-console.log(imgUrl)
 //   const myWidgetG = cloudinary.galleryWidget({
 //     "cloudName": "cloudcontrol",
 //     "mediaAssets": [{
@@ -107,3 +108,20 @@ console.log(imgUrl)
 // call fetch function
 
 // callCloud();
+const delBtnHandler = async (event) => {
+  if (event.target.hasAttribute("data-id")) {
+    const id = event.target.getAttribute("data-id");
+
+    const response = await fetch(`/api/post/${id}`, {
+      method: "DELETE",
+    });
+
+    if (response.ok) {
+      document.location.replace("/my-block");
+    } else {
+      alert("Failed to delete post");
+    }
+  }
+};
+document.querySelector(".new-post").addEventListener("click", delBtnHandler);
+document.querySelector(".your-posts").addEventListener("click", delBtnHandler);
