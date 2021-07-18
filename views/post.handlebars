@@ -1,9 +1,6 @@
-<container class="columns is-multiline featured-box">
-{{#each posts as |post|}}
 <div class="card m-3">
   <div class="column">
   <div class="card-image feature">
-    <a href="/post/{{id}}">
     <figure class="image is-128x128">
       <img src="{{image}}" alt="Placeholder image">
     </figure>
@@ -11,13 +8,10 @@
     <div class="card-description">
     <div class="card-content">
     <div class="content">
-      <p>Posted by: {{User.username}} </p>
+      <p>Posted by: {{username}} </p>
       <p>On: {{format_date date_posted}} </p>
     </div>
   </div>
-  </a>
   </div>
 </div>
 </div>
-{{/each}}
-</container>
