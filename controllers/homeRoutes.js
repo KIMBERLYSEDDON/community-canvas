@@ -25,7 +25,6 @@ router.get("/community", async (req, res) => {
     });
 
     const posts = postData.map((posts) => posts.get({ plain: true }));
-    console.log(posts);
 
     res.render("community", {
       posts,
