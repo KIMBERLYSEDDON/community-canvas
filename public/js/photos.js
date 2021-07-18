@@ -43,10 +43,10 @@
 
         cropping: true, //add a cropping step
         // showAdvancedOptions: true,  //add advanced options (public_id and tag)
-        // sources: [ "local", "url"], // restrict the upload sources to URL and local files
+        sources: [ "local", "url"], // restrict the upload sources to URL and local files
         multiple: false,  //restrict upload to a single file
         folder: "community_canvas", //upload files to the specified folder
-        // tags: ["users", "profile"], //add the given tags to the uploaded files
+        tags: ["users", "profile"], //add the given tags to the uploaded files
         context: {alt: "user_uploaded"}, //add the given context data to the uploaded files
         // clientAllowedFormats: ["images"], //restrict uploading to image files only
         // maxImageFileSize: 2000000,  //restrict file size to less than 2MB
@@ -56,7 +56,8 @@
       (error, result) => {
         console.log(error, result)
         if (!error && result /* && result.event === "success"*/) {
-          console.log("Done! Here is the image info: ", result.info);
+          console.log("Done! Here is the image info: ", result.info.secure_url);
+          // const imageUrl = result.info.secure_url;
           // document.getElementById("uploadedimage").setAttribute("src", result.info.secure_url);
         } else {
           console.log('!!!!!!', error)

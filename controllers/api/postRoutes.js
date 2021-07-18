@@ -10,6 +10,7 @@ router.post('/', withAuth, async (req, res) => {
         user_id: req.session.user_id,
         username: req.session.username
       });
+      // const imageUrl = await Post.create({res.result.info.secure_url});
       res.status(200).json(newPost);
     } catch (err) {
       res.status(400).json(err);
