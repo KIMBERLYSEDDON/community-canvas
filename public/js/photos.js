@@ -48,7 +48,7 @@ const newPostHandler = async (event) => {
           //   alert("Please fill out all fields before uploading image")
           // }
           if (description && location && image) {
-            const response = fetch("/api/post", {
+            const response = await fetch("/api/post", {
               method: "POST",
               body: JSON.stringify({ description, location, image }),
               headers: { "Content-Type": "application/json" },
