@@ -40,7 +40,7 @@ const newPostHandler = async (event) => {
     },
     (error, result) => {
           if (result.event === "success") {
-            console.log("Done! Here is the image info: ", result.info.secure_url);
+            // console.log("Done! Here is the image info: ", result.info.secure_url);
           const description = document.querySelector("#description-input").value.trim();
           const location = document.querySelector("#location-input").value.trim();
           const image = result.info.secure_url;
