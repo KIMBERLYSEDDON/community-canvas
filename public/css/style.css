@@ -52,10 +52,45 @@
     flex-wrap: wrap;
 }
 
-/* #my-image {
+.header {
+    font-family: 'Zen Tokyo Zoo',
+    /* font-size: 110px; */
+}
+
+#my-image {
     max-width: 250px;
     min-width: 250px;
-} */
+    height: 250px;
+    position: relative;
+    flex: 1;
+    margin: 20px;
+    overflow: hidden;
+}
+
+#delete{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    bottom: -60px;
+    transition: 0.6s;
+    transition-property: bottom;
+
+}
+
+.image:hover #delete{
+    bottom: 0;
+}
+
+#delete #deleteBtn{
+    color: #000;
+    font-size: 15px;
+    justify-content: center;
+   
+}
+
 
 .map-responsive{
 
