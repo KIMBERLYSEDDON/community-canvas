@@ -1,51 +1,65 @@
 <container class="columns">
-<div class="card m-3">
-  <div class="column">
-  <div class="card-image feature">
-    <figure class="image">
-      <img src="{{image}}" alt="Placeholder image">
-    </figure>
-  </div>
-    <div class="card-description">
-    <div class="card-content">
-    <div class="content">
-      <p>Posted by: {{username}} </p>
-      <p>On: {{format_date date_posted}} </p>
+  <section class="column">
+    <div class="card m-3">
+      <div class="card-image feature">
+        <figure class="image">
+          <img src="{{image}}" alt="Placeholder image">
+        </figure>
+      </div>
+      {{!-- <div class="card-description"> --}}
+        <div class="card-content" style="margin-bottom: 1.5rem; padding: 0rem;">
+          <div class="content columns">
+            <p class="has-text-left column">Posted by: {{username}} </p>
+            <p class="has-text-right column">On: {{format_date date_posted}} </p>
+            <br>
+            <p>{{format_time}}</p>
+          </div>
+          {{!--
+        </div> --}}
+      </div>
     </div>
-  </div>
-  </div>
-</div>
-</div>
-<div>
-  {{!-- NEEDS TO LOOK BETTER --}}
-  <p>HELLO</p>
-  {{#each comments as |comment|}}
-  <p>Comment: {{comment.message}} by: {{comment.user_id}}</p>
-  {{/each}}
-</div>
-<div class="column">
-<form class="comment-form">
-<div class="field">
-  <p class="control has-icons-left has-icons-right">
-    <input class="input" type="text" id="username-input" value="{{username}}" disabled>
-    <span class="icon is-small is-left">
-      <i class="far fa-user"></i>
-    </span>
-  </p>
-</div>
-<div class="field">
-  <p class="control">
-    <textarea class="textarea is-primary" type="text" id="comment" data-post-id="{{id}}" placeholder="Type your comment here..."></textarea>
-  </p>
-</div>
-<div class="field">
-  <p class="control">
-    <button class="button is-primary" type="submit">
-      Post Comment
-    </button>
-  </p>
-</div>
-</form>
-</div>
+    {{!-- ============ --}}
+    <form class="comment-form">
+      <div class="field">
+        <p class="control has-icons-left has-icons-right">
+          <input class="input" type="text" id="username-input" value="{{username}}">
+          <span class="icon is-small is-left">
+            <i class="far fa-user"></i>
+          </span>
+        </p>
+      </div>
+      <div class="field">
+        <p class="control">
+          <textarea class="textarea is-primary" type="text" id="comment" data-post-id="{{id}}"
+            placeholder="Type your comment here..."></textarea>
+        </p>
+      </div>
+      <div class="field">
+        <p class="control">
+          <button class="button is-primary" type="submit">
+            Post Comment
+          </button>
+        </p>
+      </div>
+    </form>
+    {{!-- ============ --}}
+  </section>
+  <br>
+  <section class="column">
+    <div class="has-text-black">
+      {{!-- NEEDS TO LOOK BETTER --}}
+      <h6 class=" is-size-2 is-underlined">
+        Comments
+      </h6>
 
+      <figure>
+        <div class="has-text-left">
+          {{#each comments as |comment|}}
+          <p class="box"><strong>Comment:</strong> {{comment.message}} <strong>by:</strong> {{comment.user_id}}</p>
+          {{/each}}
+        </div>
+      </figure>
+    </div>
+  </section>
+</container>
 <script src="/js/comment.js"></script>
