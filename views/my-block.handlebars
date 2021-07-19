@@ -1,65 +1,74 @@
-
 <div class="columns">
 
-{{! input column }}
-    <div class="column is-one-fifth">
-<form class="new-post">
-<div class="field">
-  <p class="control">
-    <input class="input" type="text" id="description-input" placeholder="Enter a short description of this art....">
-  </p>
-</div>
-<div class="field">
-  <p class="control">
-    <input class="input" type="text" id="location-input" placeholder="What city can it be found in?">
-  </p>
-</div>
-<div class="field">
-  <p class="control">
-  </p>
-</div>
-</form>
-            {{! cloudinary upload widget  }}
-<button id="upload_widget" class="cloudinary-button button is-primary">Upload Photo</button>
+  {{! input column }}
+  <div class="column is-one-fifth">
+    <form class="new-post">
+      <div class="field">
+        <p class="control">
+          <input class="input" type="text" id="description-input"
+            placeholder="Enter a short description of this art....">
+        </p>
+      </div>
+      <div class="field">
+        <p class="control">
+          <input class="input" type="text" id="location-input" placeholder="What city can it be found in?">
+        </p>
+      </div>
+      <div class="field">
+        <p class="control">
+        </p>
+      </div>
+    </form>
+    {{! cloudinary upload widget }}
+    <button id="upload_widget" class="cloudinary-button button is-primary">Upload Photo</button>
     {{!-- <button class="button is-primary" type="submit">
       Submit Post
     </button> --}}
 
-{{! end column}}
-</div>
+    {{! end column}}
+  </div>
 
 
-{{! posted photos column }}
-    <div class="column your-posts">
-      <div class="row">
+  {{! posted photos column }}
+  <div class="column your-posts">
+    <div class="row">
       <h2 class="title">Your Posts:</h2>
-      </div>
-      <div class="row">
+    </div>
+    <div class="row">
       {{#each posts as |post|}}
-      <div class="card">
-  <div class="card-image">
-    <figure class="image" id="my-image">
-      <img src="{{image}}" alt="Placeholder image">
-      <a href=#><i class="fas fa-heart"></i></a>
-                            <a href="map" rel="noopener noreferrer"><i class="fas fa-eye"></i></a>
+      <div class="card-background-color-transparent">
+        <div class="card-image feature">
+          <figure class="image" id="my-image">
+            <img src="{{image}}" alt="Placeholder image">
+               <div class="card-content">
+              <div class="content">
+                <a href=#><i class="fas fa-heart"></i></a>
+                <a href="map" rel="noopener noreferrer"><i class="fas fa-eye"></i></a>
 
-    <button class="button is-outlined is-small" data-id="{{id}}">DELETE</button>
-    </figure>
+                <button class="button is-outlined is-small" data-id="{{id}}">DELETE</button>
+              </div>
+
+            </div>
+          </figure>
+          
+         
+          
+
+
+        </div>
+      </div>
+      {{/each}}
+    </div>
   </div>
-</div>
-{{/each}}
-</div>
-</div>
 
-{{! empty column }}
- <div class="column is-one-fifth">
-
-</div>
+  {{! empty column }}
+  <div class="column is-one-fifth">
 
   </div>
 
+</div>
 
-<script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script> 
+
+<script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
 
 <script src="/js/photos.js"></script>
-
