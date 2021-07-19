@@ -21,12 +21,8 @@ Post.init(
     location: {
       type: DataTypes.STRING,
     },
-    // tags: {
-    //   type: DataTypes.STRING,
-    // },
     date_posted: {
       type: DataTypes.DATE,
-      // allowNull: false,
       defaultValue: DataTypes.NOW,
     },
     user_id: {
