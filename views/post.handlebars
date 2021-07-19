@@ -6,18 +6,18 @@
           <img src="{{image}}" alt="Placeholder image">
         </figure>
       </div>
-      <div class="card-description">
-        <div class="card-content">
-          <div class="content">
-            <p>Posted by: {{username}} </p>
-            <p>On: {{format_date date_posted}} </p>
+      {{!-- <div class="card-description"> --}}
+        <div class="card-content" style="margin-bottom: 1.5rem; padding: 0rem;">
+          <div class="content columns">
+            <p class="has-text-left column">Posted by: {{username}} </p>
+            <p class="has-text-right column">On: {{format_date date_posted}} </p>
           </div>
-        </div>
+          {{!--
+        </div> --}}
       </div>
     </div>
     {{!-- ============ --}}
     <form class="comment-form">
-      {{!-- Do we need this field if we already have the user info? --}}
       <div class="field">
         <p class="control has-icons-left has-icons-right">
           <input class="input" type="text" id="username-input" value="{{username}}">
@@ -59,32 +59,6 @@
         </div>
       </figure>
     </div>
-
-    {{!-- ============ --}}
-    {{!-- <form class="comment-form">
-      <div class="field">
-        <p class="control has-icons-left has-icons-right">
-          <input class="input" type="text" id="username-input" value="{{username}}" disabled>
-          <span class="icon is-small is-left">
-            <i class="far fa-user"></i>
-          </span>
-        </p>
-      </div>
-      <div class="field">
-        <p class="control">
-          <textarea class="textarea is-primary" type="text" id="comment" data-post-id="{{id}}"
-            placeholder="Type your comment here..."></textarea>
-        </p>
-      </div>
-      <div class="field">
-        <p class="control">
-          <button class="button is-primary" type="submit">
-            Post Comment
-          </button>
-        </p>
-      </div>
-    </form> --}}
-    {{!-- ============ --}}
   </section>
 
   <script src="/js/comment.js"></script>
