@@ -1,10 +1,10 @@
 
 const mapFormHandler = async (event) => {
     event.preventDefault();
-    console.log("coordinates submission")
+    // console.log("coordinates submission")
     const lon = document.querySelector('#lon-input').nodeValue.trim();
     const lat = document.querySelector('#lat-input').nodeValue.trim();
-    console.log(lat, lon);
+    // console.log(lat, lon);
 
 
 
