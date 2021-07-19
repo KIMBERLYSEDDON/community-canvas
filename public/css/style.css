@@ -43,6 +43,18 @@
     display: block;
 }
 
+.row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#my-image {
+    max-width: 250px;
+    min-width: 250px;
+}
+
 .map-responsive{
 
     overflow:hidden;
