@@ -46,6 +46,9 @@ router.get("/my-block", withAuth, async (req, res) => {
       include: [{ model: Post }],
     });
     const user = userData.get({ plain: true });
+
+
+    
     res.render("my-block", {
       ...user,
       logged_in: req.session.logged_in,

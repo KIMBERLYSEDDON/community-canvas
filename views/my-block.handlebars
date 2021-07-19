@@ -1,7 +1,9 @@
 <div class="columns">
 
   {{! input column }}
-  <div class="column is-one-fifth">
+  <div class="column is-one-third">
+    <div class="box">
+      <h2 class="header">Please fill out the input fields before uploading:</h2>
     <form class="new-post">
       <div class="field">
         <p class="control">
@@ -19,8 +21,11 @@
         </p>
       </div>
     </form>
+    <button id="upload_widget" class="button is-primary is-align-content-center">Upload Photo</button>
+    </div>
+    
     {{! cloudinary upload widget }}
-    <button id="upload_widget" class="cloudinary-button button is-primary">Upload Photo</button>
+    
     {{!-- <button class="button is-primary" type="submit">
       Submit Post
     </button> --}}
@@ -37,31 +42,26 @@
     <div class="row">
       {{#each posts as |post|}}
       <div class="card-background-color-transparent">
-        <div class="card-image feature">
+        
           <figure class="image" id="my-image">
             <img src="{{image}}" alt="Placeholder image">
-               <div class="card-content">
-              <div class="content">
-                <button class="button is-outlined is-small" data-id="{{id}}"><i class="fas fa-trash"></i></button>
+               
+              <div class="content" id="delete">
+                <button id="deleteBtn" class="button is-outlined is-small" data-id="{{id}}"><i class="fas fa-trash"></i></button>
               </div>
 
-            </div>
+           
           </figure>
           
-         
-          
-
-
-        </div>
       </div>
       {{/each}}
     </div>
   </div>
 
   {{! empty column }}
-  <div class="column is-one-fifth">
+  {{!-- <div class="column is-one-fifth">
 
-  </div>
+  </div> --}}
 
 </div>
 
