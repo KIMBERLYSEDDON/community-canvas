@@ -12,7 +12,8 @@ router.post('/:id', async (req, res) => {
         user_id: req.session.user_id,
         post_id: req.params.id,
         username: req.session.username
-      });
+      },
+      );
       console.log("IS IT REACHING HERE")
       res.status(200).json(newComment);
     } catch (err) {

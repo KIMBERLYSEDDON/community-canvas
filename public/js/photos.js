@@ -48,17 +48,18 @@ const newPostHandler = async (event) => {
           //   alert("Please fill out all fields before uploading image")
           // }
           if (description && location && image) {
-            const response = await fetch("/api/post", {
+              fetch("/api/post", {
               method: "POST",
               body: JSON.stringify({ description, location, image }),
               headers: { "Content-Type": "application/json" },
-            });
+            }).then((response)=> {
             if (response.ok) {
               document.location.replace("/my-block");
             } else {
               alert("Please make sure all fields are filled out before uploading photo.")
             }
           }
+        )}
           // document.getElementById("uploadedimage").setAttribute("src", result.info.secure_url);
         };
       }

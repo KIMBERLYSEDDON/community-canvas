@@ -22,7 +22,7 @@ router.get('/:id', async (req, res) => {
       res.render('post', {
         ...post,
         user_id: req.session.user_id,
-        username: req.session.username,
+        user: req.session.username,
         logged_in: req.session.logged_in
       });
     } catch (err) {

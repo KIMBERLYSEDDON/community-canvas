@@ -3,13 +3,14 @@
     <div class="card m-3">
       <div class="card-image feature">
         <figure class="image">
-          <img src="{{image}}" alt="Placeholder image">
+          <img id="img" data-img-id="{{image}}" src="{{image}}" alt="Placeholder image">
         </figure>
       </div>
       {{!-- <div class="card-description"> --}}
         <div class="card-content" style="margin-bottom: 1.5rem; padding: 0rem;">
           <div class="content columns">
             <p class="has-text-left column">Posted by: {{username}} </p>
+            <p class="has-text-center column"><button class="is-primary" id="like-btn" data-like-id="{{likes}}"><i class="fas fa-heart"></i>{{likes}}</button></p>
             <p class="has-text-right column">On: {{format_date date_posted}} </p>
             <br>
             <p>{{format_time}}</p>
@@ -22,7 +23,7 @@
     <form class="comment-form">
       <div class="field">
         <p class="control has-icons-left has-icons-right">
-          <input class="input" type="text" id="username-input" value="{{username}}">
+          <input class="input" type="text" id="username-input" value="{{user}}" disabled>
           <span class="icon is-small is-left">
             <i class="far fa-user"></i>
           </span>
@@ -55,7 +56,7 @@
       <figure>
         <div class="has-text-left">
           {{#each comments as |comment|}}
-          <p class="box"><strong>Comment:</strong> {{comment.message}} <strong>by:</strong> {{comment.user_id}}</p>
+          <p class="box"><strong>Comment:</strong> {{comment.message}} <strong>by:</strong> {{comment.username}}</p>
           {{/each}}
         </div>
       </figure>

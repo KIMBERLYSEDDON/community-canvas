@@ -21,6 +21,10 @@ Post.init(
     location: {
       type: DataTypes.STRING,
     },
+    likes: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0,
+    },
     // tags: {
     //   type: DataTypes.STRING,
     // },
