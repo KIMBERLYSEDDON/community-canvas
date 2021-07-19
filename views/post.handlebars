@@ -1,24 +1,23 @@
 <container class="columns">
   <section class="column">
-    <div class="card m-3">
+    {{!-- the image --}}
+    <span class="card m-3">
       <div class="card-image feature">
         <figure class="image">
           <img src="{{image}}" alt="Placeholder image">
         </figure>
       </div>
-      {{!-- <div class="card-description"> --}}
-        <div class="card-content" style="margin-bottom: 1.5rem; padding: 0rem;">
-          <div class="content columns">
-            <p class="has-text-left column">Posted by: {{username}} </p>
-            <p class="has-text-right column">On: {{format_date date_posted}} </p>
-            <br>
-            <p>{{format_time}}</p>
-          </div>
-          {{!--
-        </div> --}}
+      <div class="card-content" style="margin-bottom: 1.5rem; padding: 0rem;">
+        <div class="content columns">
+          <p class="has-text-left column">Posted by: {{username}} </p>
+          <p class="has-text-right column">On: {{format_date date_posted}} </p>
+          <br>
+          {{!-- format_time currently doesnt work --}}
+          <p>{{format_time}}</p>
+        </div>
       </div>
-    </div>
-    {{!-- ============ --}}
+    </span>
+    {{!-- Comment form --}}
     <form class="comment-form">
       <div class="field">
         <p class="control has-icons-left has-icons-right">
@@ -42,16 +41,14 @@
         </p>
       </div>
     </form>
-    {{!-- ============ --}}
   </section>
   <br>
+{{!-- The comments --}}
   <section class="column">
-    <div class="has-text-black">
-      {{!-- NEEDS TO LOOK BETTER --}}
+    <span class="has-text-black">
       <h6 class=" is-size-2 is-underlined">
         Comments
       </h6>
-
       <figure>
         <div class="has-text-left">
           {{#each comments as |comment|}}
@@ -59,7 +56,7 @@
           {{/each}}
         </div>
       </figure>
-    </div>
+    </span>
   </section>
 </container>
 <script src="/js/comment.js"></script>
