@@ -24,8 +24,11 @@ router.get("/community", async (req, res) => {
       ],
     });
 
-    const posts = postData.map((posts) => posts.get({ plain: true }));
+    const sortedPosts = postData.sort((a,b) => (a.date_posted < b.date_posted) ? 1 : -1 );
+    
+    const posts = sortedPosts.map((posts) => posts.get({ plain: true }));
 
+    
     res.render("community", {
       posts,
       logged_in: req.session.logged_in,
@@ -43,6 +46,9 @@ router.get("/my-block", withAuth, async (req, res) => {
       include: [{ model: Post }],
     });
     const user = userData.get({ plain: true });
+
+
+    
     res.render("my-block", {
       ...user,
       logged_in: req.session.logged_in,
