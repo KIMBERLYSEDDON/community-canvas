@@ -48,11 +48,30 @@ const likeHandler = async (event) => {
     // document.querySelector("#like-btn").setAttribute('data-like-id', data.likes);
 }
 }
+const delBtnHandler = async (event) => {
+  if (event.target.hasAttribute("data-id")) {
+    const id = event.target.getAttribute("data-id");
+
+    const response = await fetch(`/api/comment/${id}`, {
+      method: "DELETE",
+    });
+console.log(response)
+    if (response.ok) {
+      document.location.replace(`/post/${postId}`);
+    } else {
+      alert("Failed to delete comment");
+    }
+  }
+};
   
-  document
+  
+document
     .querySelector(".comment-form")
     .addEventListener("submit", commentHandler);
 
-    document
+    
+document
     .querySelector(".card-content")
     .addEventListener("click", likeHandler);
+
+document.querySelector(".comments").addEventListener("click", delBtnHandler);

@@ -18,11 +18,19 @@ router.get('/:id', async (req, res) => {
         ],
       });
       const post = postData.get({ plain: true });
-      console.log(post)
+      for (let i = 0; i < post.comments.length; i++) {
+        if (post.comments[i].username === req.session.username){
+          post.comments[i].displayDelete = true
+        }
+        
+      }
+
+
+      console.log("THIS", post)
       res.render('post', {
         ...post,
         user_id: req.session.user_id,
-        user: req.session.username,
+        userLoggedIn: req.session.username,
         logged_in: req.session.logged_in
       });
     } catch (err) {
