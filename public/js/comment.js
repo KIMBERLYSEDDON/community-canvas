@@ -69,7 +69,7 @@ document
 
     
 document
-    .querySelector(".card-content")
+    .querySelector(".feature")
     .addEventListener("click", likeHandler);
 
 document.querySelector(".comments").addEventListener("click", delBtnHandler);

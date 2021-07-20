@@ -121,3 +121,7 @@
     max-width: 700px;
 
 }
+.like-feature {
+    position: relative;
+    left: 200px;
+}
