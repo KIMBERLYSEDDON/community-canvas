@@ -5,8 +5,6 @@ const commentHandler = async (event) => {
   
     const username = document.querySelector("#username-input").value.trim();
     const message = document.querySelector("#comment").value.trim();
-    
-    console.log("POST", postId)
   
     if (username && message) {
       const response = await fetch(`/api/comment/${postId}`, {
@@ -18,12 +16,12 @@ const commentHandler = async (event) => {
       });
   
       if (response.ok) {
-        console.log("hello");
+        // console.log("hello");
         document.location.replace(`/post/${postId}`);
         // document.location.replace(`/post/${post_id}`);
       } else {
         alert("Failed to create comment");
-        console.log(error)
+        // console.log(error)
       }
     }
 };

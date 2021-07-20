@@ -1,71 +1,48 @@
-<div class="columns">
-
+<container class="columns">
   {{! input column }}
-  <div class="column is-one-third">
+  <section class="column is-one-third">
     <div class="box">
       <h2 class="header">Please fill out the input fields before uploading:</h2>
-    <form class="new-post">
-      <div class="field">
-        <p class="control">
-          <input class="input" type="text" id="description-input"
-            placeholder="Enter a short description of this art....">
-        </p>
-      </div>
-      <div class="field">
-        <p class="control">
-          <input class="input" type="text" id="location-input" placeholder="What city can it be found in?">
-        </p>
-      </div>
-      <div class="field">
-        <p class="control">
-        </p>
-      </div>
-    </form>
-    <button id="upload_widget" class="button is-primary is-align-content-center">Upload Photo</button>
+      <form class="new-post">
+        <span class="field">
+          <p class="control">
+            <input class="input" type="text" id="description-input"
+              placeholder="Enter a short description of this art....">
+          </p>
+        </span>
+        <span class="field">
+          <p class="control">
+            <input class="input" type="text" id="location-input" placeholder="What city can it be found in?">
+          </p>
+        </span>
+        <span class="field">
+          <p class="control">
+          </p>
+        </span>
+      </form>
+      <button id="upload_widget" class="button is-primary is-align-content-center">Upload Photo</button>
     </div>
-    
-    {{! cloudinary upload widget }}
-    
-    {{!-- <button class="button is-primary" type="submit">
-      Submit Post
-    </button> --}}
-
-    {{! end column}}
-  </div>
-
-
+  </section>
   {{! posted photos column }}
-  <div class="column your-posts">
-    <div class="row">
+  <section class="column your-posts">
+    <span class="row">
       <h2 class="title">Your Posts:</h2>
-    </div>
+    </span>
     <div class="row">
       {{#each posts as |post|}}
       <div class="card-background-color-transparent">
-        
-          <figure class="image" id="my-image">
-            <img src="{{image}}" alt="Placeholder image">
-               
-              <div class="content" id="delete">
-                <button id="deleteBtn" class="button is-outlined is-small" data-id="{{id}}"><i class="fas fa-trash"></i></button>
-              </div>
-
-           
-          </figure>
-          
+        <figure class="image" id="my-image">
+          <img src="{{image}}" alt="Placeholder image">
+          <span class="content" id="delete">
+            <button id="deleteBtn" class="button is-outlined is-small" data-id="{{id}}"><i
+                class="fas fa-trash"></i></button>
+          </span>
+        </figure>
       </div>
       {{/each}}
     </div>
-  </div>
-
-  {{! empty column }}
-  {{!-- <div class="column is-one-fifth">
-
-  </div> --}}
-
-</div>
-
+  </section>
+</container>
 
 <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
-
 <script src="/js/photos.js"></script>

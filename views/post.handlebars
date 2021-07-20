@@ -1,9 +1,9 @@
 <container class="columns">
   <section class="column">
     <div class="card m-3">
-      <div class="card-image feature">
+      <span class="card-image feature">
         <figure class="image">
-          <img id="img" data-img-id="{{image}}" src="{{image}}" alt="Placeholder image">
+          <img id="img" data-img-id="{{image}}" src="{{image}}" alt="{{description}}">
         </figure>
       </div>
      <div class="card-content" style="margin-bottom: 1.5rem; padding: 0rem;">
@@ -17,7 +17,7 @@
         </span>
       </div>
     </div>
-    {{!-- ============ --}}
+    {{!-- comment form --}}
     <form class="comment-form">
       <div class="field">
         <p class="control has-icons-left">
@@ -41,16 +41,15 @@
         </p>
       </div>
     </form>
-    {{!-- ============ --}}
+    {{!-- comment post --}}
   </section>
   <br>
   <section class="column comments">
     <div class="has-text-black">
-      {{!-- NEEDS TO LOOK BETTER --}}
       <h6 class="is-size-2 is-underlined">
         Comments
       </h6>
-{{#each comments as |comment|}}
+        {{#each comments as |comment|}}
         <div class="has-text-left has-icon-right">
           
           <div class="comment box p-2">
@@ -64,7 +63,6 @@
           </div>
           {{/each}}
         </div>
-    </div>
   </section>
 </container>
 <script src="/js/comment.js"></script>

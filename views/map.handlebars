@@ -1,16 +1,16 @@
-<div class="container is-fluid">
-
-<input class="input is-primary" type="text" id="lon-input" placeholder="Enter Longitude">
-<input class="input is-primary" type="text" id="lat-input" placeholder="Enter Lattitude">
-<div class="control">
-  <button id="map" class="button is-primary">Submit</button>
-</div>
-
-<div class="map-responsive">
-<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-75.393104525283%2C39.87715363343637%2C-75.03948208875954%2C40.02322523243871&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/#map=12/39.9502/-75.2163">View Larger Map</a></small>
-</div>
-
-</div>
+<section class="container is-fluid">
+  <input class="input is-primary" type="text" id="lon-input" placeholder="Enter Longitude">
+  <input class="input is-primary" type="text" id="lat-input" placeholder="Enter Lattitude">
+  <div class="control">
+    <button id="map" class="button is-primary">Submit</button>
+  </div>
+  <span class="map-responsive">
+    <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+      src="https://www.openstreetmap.org/export/embed.html?bbox=-75.393104525283%2C39.87715363343637%2C-75.03948208875954%2C40.02322523243871&amp;layer=mapnik"
+      style="border: 1px solid black"></iframe><br /><small><a
+        href="https://www.openstreetmap.org/#map=12/39.9502/-75.2163">View Larger Map</a></small>
+  </span>
+</section>
 
 <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
 <script src="/js/map.js"></script>
