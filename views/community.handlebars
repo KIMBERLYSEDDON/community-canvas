@@ -1,23 +1,21 @@
 <container class="columns is-multiline featured-box">
   {{#each posts as |post|}}
-  <main class="card com-cards m-3">
-    <div class="column">
-      <section class="card-image feature">
-        <a href="/post/{{id}}">
-          <figure class="image is-128x128">
-            <img src="{{image}}" alt="Placeholder image">
-          </figure>
-      </section>
-      <section class="card-description">
-        <div class="card-content">
-          <span class="content">
-            <p>Posted by: {{user.username}} </p>
-            <p>On: {{format_date date_posted}} </p>
-          </span>
+    <div class="card com-cards m-3">
+      <div class="column">
+        <div class="card-image feature">
+          <a href="/post/{{id}}">
+            {{!-- <figure class="image is-128x128"> --}}
+              <img class="image is-128x128" src="{{image}}" alt="{{description}}" />
+              <div class="card-description">
+                <div class="columns">
+                    <p class="has-text-left column is-three-fifths">Posted by: {{user.username}} </p>
+                    <p class="has-text-right column">On: {{format_date date_posted}} </p>
+                </div>
+              </div>
+            {{!-- </figure> --}}
+          </a>
         </div>
-        </a>
-      </section>
+      </div>
     </div>
-  </main>
   {{/each}}
 </container>

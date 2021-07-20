@@ -5,7 +5,19 @@ const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
   try {
+    const postData = await Post.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ["username"],
+        },
+      ],
+    });
+    const posts = postData.map((posts) => posts.get({ plain: true }));
+const randIndex = Math.floor(Math.random() * posts.length);
+    console.log(posts[randIndex])
     res.render("homepage", {
+      post: posts[randIndex],
       logged_in: req.session.logged_in,
     });
   } catch (err) {

@@ -8,13 +8,33 @@ router.post('/', async (req, res) => {
       const newPost = await Post.create({
         ...req.body,
         user_id: req.session.user_id,
-        // username: req.session.username
+        username: req.session.username
       });
       // const imageUrl = await Post.create({res.result.info.secure_url});
       res.status(200).json(newPost);
     } catch (err) {
       res.status(500).json(err);
     }
+});
+
+router.put('/:id', async (req, res) => {
+  console.log(req.body)
+  try {
+    const updatePost = await Post.update({
+      // image: req.body.image,
+      likes: req.body.likes,
+    },
+    {
+      where: {
+        id: req.params.id,
+      },
+    });
+    let responseBack = await Post.findByPk(req.params.id);
+
+    res.status(200).json(responseBack);
+  } catch (err) {
+    res.status(400).json(err)
+  }
 });
 
 router.delete('/:id', withAuth, async (req, res) => {

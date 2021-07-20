@@ -3,23 +3,25 @@
     <div class="card m-3">
       <span class="card-image feature">
         <figure class="image">
-          <img src="{{image}}" alt="Placeholder image">
+          <img id="img" data-img-id="{{image}}" src="{{image}}" alt="{{description}}">
         </figure>
-      </span>
-      <div class="card-content" style="margin-bottom: 1.5rem; padding: 0rem;">
+        </span>
+     <div class="card-content" style="margin-bottom: 1.5rem; padding: 0rem;">
         <span class="content columns">
-          <p class="has-text-left column">Posted by: {{username}} </p>
-          <p class="has-text-right column">On: {{format_date date_posted}} </p>
-          <br>
-          <p>{{format_time}}</p>
+          <p class="has-text-left column">Posted by: {{username}}</p>
+          <p class="has-text-center column">On: {{format_date date_posted}}</p>
+          <p class="has-text-right column">In: {{location}}</p>
+        </span>
+        <span class="has-text-justified">
+          {{description}}
         </span>
       </div>
-    </div>
+      </div>
     {{!-- comment form --}}
     <form class="comment-form">
       <div class="field">
-        <p class="control has-icons-left has-icons-right">
-          <input class="input" type="text" id="username-input" value="{{username}}">
+        <p class="control has-icons-left">
+          <input class="input" type="text" id="username-input" value="{{userLoggedIn}}" disabled>
           <span class="icon is-small is-left">
             <i class="far fa-user"></i>
           </span>
@@ -42,19 +44,25 @@
     {{!-- comment post --}}
   </section>
   <br>
-  <section class="column">
+  <section class="column comments">
     <div class="has-text-black">
-      <h6 class=" is-size-2 is-underlined">
+      <h6 class="is-size-2 is-underlined">
         Comments
       </h6>
-      <figure>
-        <span class="has-text-left">
-          {{#each comments as |comment|}}
-          <p class="box"><strong>Comment:</strong> {{comment.message}} <strong>by:</strong> {{comment.user_id}}</p>
+        {{#each comments as |comment|}}
+        <div class="has-text-left has-icon-right">
+          
+          <div class="comment box p-2">
+          <strong>Comment:</strong> {{comment.message}} <strong>by:</strong> {{comment.username}}
+         
+          {{#if comment.displayDelete}}
+
+          <button id="delBtn" class="button is-outlined is-small" data-id="{{comment.id}}"><i class="fas fa-trash"></i></button>
+          </div>
+          {{/if}}
+          </div>
           {{/each}}
-        </span>
-      </figure>
-    </div>
+        </div>
   </section>
 </container>
 <script src="/js/comment.js"></script>
