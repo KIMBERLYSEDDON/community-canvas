@@ -1,12 +1,8 @@
 const sequelize = require('../config/connection');
 const { User, Post } = require('../models');
 
-// unsure how the photo data will be saved, 
 const userData = require('./userData.json');
 const postData = require('./postData.json');
-
-// Unsure if we want to seed dummy comments
-// const commentData = require('./');
 
 const seedDatabase = async () => {
     await sequelize.sync({ force: true });
@@ -15,16 +11,12 @@ const seedDatabase = async () => {
         individualHooks: true,
         returning: true,
     });
-
     for (const post of postData) {
         await Post.create({
             ...post,
             user_id: users[Math.floor(Math.random() * users.length)].id,
         });
     }
-
-    // seeded comment code will go here.
-
     process.exit(0);
 };
 

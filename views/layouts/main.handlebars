@@ -1,82 +1,79 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Zen+Tokyo+Zoo&display=swap"
-      rel="stylesheet"
-    />
-    <title>Community Canvas</title>
-    <link
-      rel="stylesheet"
-      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
-    />
-    <link rel="stylesheet" href="/css/style.css" />
-  </head>
-  <body class="hero is-primary is-medium has-background">
-    <!-- Hero head: will stick at the top -->
-    <div class="hero-head">
-      <nav class="navbar">
-        <div class="container">
-          <div class="navbar-brand mt-2">
-            <p class="title is-1">Community Canvas</p>
-            <p class="subtitle is-3">a collaborative street art library</p>
-            <span class="navbar-burger" data-target="navbarMenuHeroA">
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
-          </div>
-          <div id="navbarMenuHeroA" class="navbar-menu">
-            <div class="navbar-end">
-              <a href="/" class="navbar-item">
-                Home
-              </a>
-              <a href="/community" class="navbar-item">
-                Community
-              </a>
-              {{#if logged_in}}
-                <a href="/my-block" class="navbar-item">
-                  My Block
-                </a>
-                <span class="navbar-item">
-                  <button class="button is-primary is-inverted" id="logout">
-                    <span>Log Out</span>
-                  </button>
-                </span>
-              {{else}}
-                <span class="navbar-item">
-                  <a href="/login" class="button is-primary is-inverted">
-                    <span>Log In</span>
-                  </a>
-                </span>
-              {{/if}}
-            </div>
-          </div>
-        </div>
-      </nav>
-    </div>
-    <div class="hero-body">
-      <div class="container has-text-centered">
-        {{{body}}}
-      </div>
-    </div>
-    <div class="hero-foot">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Zen+Tokyo+Zoo&display=swap"
+    rel="stylesheet" />
+  <title>Community Canvas</title>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body class="hero is-primary is-medium has-background">
+  <!-- Hero head: will stick at the top -->
+  <main class="hero-head">
+    <nav class="navbar">
       <div class="container">
+        <section class="navbar-brand mt-2">
+          <p class="title is-1">Community Canvas</p>
+          <p class="subtitle is-3">a collaborative street art library</p>
+          <span class="navbar-burger" data-target="navbarMenuHeroA">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </section>
+        <sec id="navbarMenuHeroA" class="navbar-menu">
+          <section class="navbar-end">
+            <a href="/" class="navbar-item">
+              Home
+            </a>
+            <a href="/community" class="navbar-item">
+              Community
+            </a>
+            {{#if logged_in}}
+            <a href="/my-block" class="navbar-item">
+              My Block
+            </a>
+            <span class="navbar-item">
+              <button class="button is-primary is-inverted" id="logout">
+                <span>Log Out</span>
+              </button>
+            </span>
+            {{else}}
+            <span class="navbar-item">
+              <a href="/login" class="button is-primary is-inverted">
+                <span>Log In</span>
+              </a>
+            </span>
+            {{/if}}
+          </section>
+        </div>
       </div>
+    </nav>
+  </main>
+  <section class="hero-body">
+    <div class="container has-text-centered">
+      {{{body}}}
     </div>
-    {{#if logged_in}}
-      <script src="/js/logout.js"></script>
-    {{/if}}
-  </body>
+  </section>
+  <section class="hero-foot">
+    <div class="container">
+    </div>
+  </section>
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+</body>
 
 </html>

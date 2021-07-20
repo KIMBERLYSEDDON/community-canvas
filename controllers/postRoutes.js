@@ -18,7 +18,7 @@ router.get('/:id', async (req, res) => {
         ],
       });
       const post = postData.get({ plain: true });
-      console.log(post)
+      // console.log(post)
       res.render('post', {
         ...post,
         user_id: req.session.user_id,
