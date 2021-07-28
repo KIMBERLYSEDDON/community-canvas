@@ -16,19 +16,18 @@ const commentHandler = async (event) => {
       });
   
       if (response.ok) {
-        // console.log("hello");
+
         document.location.replace(`/post/${postId}`);
-        // document.location.replace(`/post/${post_id}`);
+
       } else {
         alert("Failed to create comment");
-        // console.log(error)
+
       }
     }
 };
 
 const likeHandler = async (event) => {
   event.preventDefault();
-  const image = document.querySelector("#img").getAttribute('data-img-id');
   let likes = document.querySelector("#like-btn").getAttribute('data-like-id');
   console.log("THIS", likes)
   if (likes) {
@@ -41,9 +40,6 @@ const likeHandler = async (event) => {
       },
     });
       document.location.replace(`/post/${postId}`);
-    // let data = await response.json();
-    // console.log(data.likes)
-    // document.querySelector("#like-btn").setAttribute('data-like-id', data.likes);
 }
 }
 const delBtnHandler = async (event) => {
@@ -53,7 +49,6 @@ const delBtnHandler = async (event) => {
     const response = await fetch(`/api/comment/${id}`, {
       method: "DELETE",
     });
-console.log(response)
     if (response.ok) {
       document.location.replace(`/post/${postId}`);
     } else {
