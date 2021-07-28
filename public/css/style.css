@@ -44,6 +44,9 @@
     opacity: 1;
     display: block;
 }
+.com-cards:hover .com-image {
+    margin: auto;
+}
 
 .row {
     width: 100%;
@@ -68,7 +71,7 @@
 }
 .com-image {
     max-width: 150px;
-    height: auto;
+    height: 150px;
 }
 
 #delete{
