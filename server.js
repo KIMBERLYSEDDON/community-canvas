@@ -5,7 +5,7 @@ const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
 const cloudinary = require('cloudinary').v2;
-var compression = require('compression')
+const compression = require('compression');
 
 
 const sequelize = require('./config/connection');

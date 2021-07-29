@@ -24,6 +24,7 @@
 .img {
     opacity: 100%;
 }
+@media (min-width: 992px) {
 .card-description {
     font-size: 8px;
     opacity: 0;
@@ -47,7 +48,7 @@
 .com-cards:hover .com-image {
     margin: auto;
 }
-
+}
 .row {
     width: 100%;
     display: flex;
@@ -72,6 +73,7 @@
 .com-image {
     max-width: 150px;
     height: 150px;
+    margin: auto;
 }
 
 #delete{
@@ -131,4 +133,16 @@
 .like-feature {
     position: relative;
     left: 200px;
+}
+@media (max-width: 991px) {
+.com-cards {
+    /* max-width: 150px;
+    max-height: 150px; */
+    background-color: rgba(52, 156, 134, 0.795);
+    border: none;
+}
+.card-description {
+    font-size: 15px;
+    color: white;
+}
 }
